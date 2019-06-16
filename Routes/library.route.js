@@ -1,0 +1,11 @@
+const express = require("express")
+const router = express.Router()
+const controller = require("../Controllers/library.controller")
+
+console.log("router library up")
+router.get("/", controller.get)
+router.post("/", controller.post)
+router.put("/:id", controller.put)
+router.delete("/:id", controller.del)
+//console.log("controller books")
+module.exports = app => app.use("/libraries", router)
